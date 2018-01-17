@@ -1,0 +1,32 @@
+<?php
+$_code=$this->getMethodCode();
+$carrier = $this->getMethodInstance();
+$pickupData = $this->getQuote()->getPickupData();
+$_rate = $this->getRate();
+if(!isset($pickupData['Description']))
+{
+    $pickupData['Description'] = -1;
+}
+if(!isset($pickupData['name']))
+{
+    $pickupData['name'] = '';
+}
+?>
+<ul class="form-list" id="shipping_form_<?php echo $_rate->getCode() ?>" style="display:none;">
+    <li>
+        <label for="<?php echo $_code ?>_store" class="required"><em>*</em><?php echo $this->__('Виберіть Регіон') ?></label>
+        <span class="input-box">
+            <select class="required-entry" name="shipping_novaposhta[area]" onchange="getCityIfLoginOpenMap(this)">
+                <option value='' <?php if($pickupData['Description'] == ''){ echo "selected=selected";} ?>><?php echo $this->__('Виберіть область..');?></option>
+               <?php $row_area = Mage::registry('areas');
+               foreach ($row_area as $area):?>
+                   <option value='<?php echo $area['ref']?>' <?php if($pickupData['Description'] == $area['description']){ echo "selected=selected";} ?>><?php echo $area['description'];?></option>
+               <?php endforeach; ?>
+            </select>
+        </span>
+    </li>
+    <li class="city_desc">
+    </li>
+    <li class="ware_desc">
+    </li>
+</ul>

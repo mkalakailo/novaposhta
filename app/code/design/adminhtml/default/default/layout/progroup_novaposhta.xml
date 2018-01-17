@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <novaposhta_adminhtml_novaposhta_cities>
+        <reference name="content">
+            <block type="novaposhta/adminhtml_cities" name="cities" />
+        </reference>
+    </novaposhta_adminhtml_novaposhta_cities>
+    <novaposhta_adminhtml_novaposhta_warehouses>
+        <reference name="content">
+            <block type="novaposhta/adminhtml_warehouses" name="warehouses" />
+        </reference>
+    </novaposhta_adminhtml_novaposhta_warehouses>
+    <novaposhta_adminhtml_novaposhta_areas>
+        <reference name="content">
+            <block type="novaposhta/adminhtml_areas" name="areas" />
+        </reference>
+    </novaposhta_adminhtml_novaposhta_areas>
+    <adminhtml_sales_order_view>
+        <reference name="order_tab_info">
+            <action method="setTemplate"><template>novaposhta/sales/order/view/tab/info.phtml</template></action>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

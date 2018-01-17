@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <checkout_onepage_index>
+        <reference name='head'>
+            <reference name="head">
+                <action method="addJs"><script>novaposhta/novaposhta.js</script></action>
+            </reference>
+        </reference>
+    </checkout_onepage_index>
+    <checkout_onepage_shippingmethod>
+        <reference name='root'>
+            <action method='setTemplate'><template>novaposhta/checkout/onepage/shipping_method/available.phtml</template></action>
+        </reference>
+    </checkout_onepage_shippingmethod>
+</layout>
